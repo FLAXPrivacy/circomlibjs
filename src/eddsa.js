@@ -7,6 +7,7 @@ const pedersenHash = require("./pedersenHash").hash;
 const mimc7 = require("./mimc7");
 const poseidon = require("./poseidon.js");
 const mimcsponge = require("./mimcsponge");
+const Buffer = require("buffer").Buffer;
 
 
 exports.prv2pub= prv2pub;

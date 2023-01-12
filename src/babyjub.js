@@ -1,6 +1,7 @@
 const F1Field = require("ffjavascript").F1Field;
 const Scalar = require("ffjavascript").Scalar;
 const utils = require("ffjavascript").utils;
+const Buffer = require('buffer/').Buffer;
 
 exports.addPoint = addPoint;
 exports.mulPointEscalar = mulPointEscalar;
