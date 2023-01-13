@@ -1,5 +1,5 @@
 exports.babyjub = require("./src/babyjub");
-exports.eddsa = require("./src/eddsa");
+// exports.eddsa = require("./src/eddsa");
 // exports.evmasm = require("./src/evmasm");
 // exports.mimc7 = require("./src/mimc7");
 // exports.mimc_gencontract = require("./src/mimc_gencontract");
