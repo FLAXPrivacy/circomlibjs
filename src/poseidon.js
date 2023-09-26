@@ -30,7 +30,7 @@ function poseidon(inputs, initialState = F.zero) {
     const M = opt.M[t-2];
     const P = opt.P[t-2];
 
-    let state = [initialState, ...inputs.map(a => F.e(a))];
+    let state = [F.e(initialState), ...inputs.map(a => F.e(a))];
 
     state = state.map((a, i) => F.add(a, C[i]));
 
