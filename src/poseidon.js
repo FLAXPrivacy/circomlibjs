@@ -18,7 +18,7 @@ const N_ROUNDS_P = [56, 57, 56, 60, 60, 63, 64, 63, 60, 66, 60, 65, 70, 60, 64, 
 
 const pow5 = a => F.mul(a, F.square(F.square(a, a)));
 
-function poseidon(inputs) {
+function poseidon(inputs, initialState = F.zero) {
     assert(inputs.length > 0);
     assert(inputs.length <= N_ROUNDS_P.length);
 
@@ -30,7 +30,7 @@ function poseidon(inputs) {
     const M = opt.M[t-2];
     const P = opt.P[t-2];
 
-    let state = [F.zero, ...inputs.map(a => F.e(a))];
+    let state = [initialState, ...inputs.map(a => F.e(a))];
 
     state = state.map((a, i) => F.add(a, C[i]));
 

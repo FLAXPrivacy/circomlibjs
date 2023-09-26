@@ -114,10 +114,10 @@ function createCode(nInputs) {
     C.calldataload();
     C.div();
     C.dup(0);
-    C.push(Web3Utils.keccak256(`poseidon(uint256,uint256[${nInputs}])`).slice(0, 10)); // poseidon(uint256,uint256[n])
+    C.push(Web3Utils.keccak256(`poseidonExt(uint256,uint256[${nInputs}])`).slice(0, 10)); // poseidon(uint256,uint256[n])
     C.eq();
     C.swap(1);
-    C.push(Web3Utils.keccak256(`poseidon(uint256,bytes32[${nInputs}])`).slice(0, 10)); // poseidon(uint256,bytes32[n])
+    C.push(Web3Utils.keccak256(`poseidonExt(uint256,bytes32[${nInputs}])`).slice(0, 10)); // poseidon(uint256,bytes32[n])
     C.eq();
     C.or();
     C.jmpi("start");
@@ -157,7 +157,7 @@ function createCode(nInputs) {
 
     // load initial state onto stack atop the inputs
     // -> [initialState] [inputs[0]] [inputs[1]] ... [inputs[t-1]] [q] [MDS]
-    C.push("0x04");
+    C.push(0x04);
     C.calldataload();
 
     // now that the state is set up on the stack,
